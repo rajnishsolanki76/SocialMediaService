@@ -25,7 +25,7 @@ public class Post implements Serializable{
 	private static final long serialVersionUID = -1459302010958664238L;
 	//Id will be unique post ID. We can use any random generator for generating post ID.
 	@NotNull
-	private long id;
+	private String id;
 	private String postContent;
 	private String postCaption;
 	@NotNull
@@ -44,26 +44,16 @@ public class Post implements Serializable{
 		
 	}
 	
-	public Post(long id,String postCont,String createdBy,Date createdOn,PostMode mode){
+	public Post(String id,String postCont,String createdBy,Date createdOn,PostMode mode){
 		this.id = id;
 		this.postContent = postCont;
 		this.createdBy = createdBy;
 		this.createdOn = createdOn;
 		this.postMode = mode;
+		this.lastUpdatedOn = createdOn;
 	}
 	
-	/**
-	 * @return the id
-	 */
-	public long getId() {
-		return id;
-	}
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(long id) {
-		this.id = id;
-	}
+	
 	/**
 	 * @return the postContent
 	 */
@@ -173,6 +163,36 @@ public class Post implements Serializable{
 	 */
 	public void setStatus(boolean status) {
 		this.status = status;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if( obj == null || ! (obj instanceof Post)){
+			return false;
+		}
+		if(obj instanceof Post){
+			return this.id.equals(((Post) obj).getId()) ? true : false;
+		}
+		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		return super.hashCode();
 	}
 
 }

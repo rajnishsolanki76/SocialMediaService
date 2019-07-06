@@ -12,6 +12,6 @@ public interface PostRepository {
 	 * only single exception going from service
 	 *
 	 */
-	public boolean addPost(Post p) throws SocialMediaServiceException;
+	public Post addPost(Post p) throws SocialMediaServiceException;
 	public List<Post> getRecentFeedByUser(String userId) throws SocialMediaServiceException;
 }

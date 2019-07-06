@@ -5,6 +5,7 @@ public class ServiceResponse {
 	private boolean status;
 	private String message;
 	private String type;
+	private String error;
 	/**
 	 * @return the status
 	 */
@@ -40,6 +41,18 @@ public class ServiceResponse {
 	 */
 	public void setType(String type) {
 		this.type = type;
+	}
+	/**
+	 * @return the error
+	 */
+	public String getError() {
+		return error;
+	}
+	/**
+	 * @param error the error to set
+	 */
+	public void setError(String error) {
+		this.error = error;
 	}
 	
 
