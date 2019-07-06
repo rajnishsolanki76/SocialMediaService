@@ -5,7 +5,7 @@ SocialMediaService is built using spring boot web starter project. Service consi
 3. follow(followerId,followeeId)
 4. unfollow(followerId,followeeId)
 
-You can start running the service by running ServiceApp class as normal java applicatiom. ServiceApp class is main class to start the service.
+You can start running the service by running ServiceApp class as normal java applicatiom. ServiceApp class is main class to start the service. Please build the project before starting the service.
 
 create(userId,postId,content) 
 It is post method which addeds new post in data collection. Method - POST
