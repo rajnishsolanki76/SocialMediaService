@@ -21,8 +21,8 @@ public class FollowerController {
 
 	private static Logger log = LogManager.getLogger();
 
-	@PutMapping
-	@RequestMapping("/{follower}/follow/{followee}")
+	@PutMapping(path = "/{follower}/follow/{followee}")
+	//@RequestMapping("/{follower}/follow/{followee}")
 	public @ResponseBody ServiceResponse follow(@PathVariable(value = "follower") String followerId,
 			@PathVariable(value = "followee") String followeeId) {
 		log.info("Inside Follow Unfollow Method");
