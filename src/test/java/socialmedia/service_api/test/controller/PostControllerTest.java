@@ -7,21 +7,24 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import socialmedia.service_api.controller.PostController;
 import socialmedia.service_api.dao.PostRepository;
 import socialmedia.service_api.enums.PostMode;
 import socialmedia.service_api.exception.SocialMediaServiceException;
 import socialmedia.service_api.model.Post;
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
 @Import(value = {SocialMediaTestConfiguration.class})
 public class PostControllerTest {
 	
+	@Autowired
 	private PostController postController;
 	
-	@Autowired
+	@MockBean
 	private PostRepository postRepository;
 	
 	@Test
